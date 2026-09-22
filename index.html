@@ -1,0 +1,328 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致赵老师、刘老师、宋老师、王老师</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f4f1eb;
+            color: #333;
+            font-family:
+                "Noto Serif SC",
+                "Songti SC",
+                "STSong",
+                "SimSun",
+                serif;
+            line-height: 1.95;
+        }
+
+        /* 顶部装饰 */
+        .hero {
+            height: 36vh;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: #ebe6dc;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border: 1px solid rgba(80, 72, 60, 0.12);
+            border-radius: 50%;
+            top: -220px;
+            right: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(80, 72, 60, 0.08);
+            border-radius: 50%;
+            bottom: -190px;
+            left: -80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .small-title {
+            font-family: sans-serif;
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #8b8377;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 400;
+            letter-spacing: 6px;
+            color: #403b34;
+        }
+
+        .line {
+            width: 42px;
+            height: 1px;
+            background: #9a9184;
+            margin: 25px auto 0;
+        }
+
+        /* 信件主体 */
+        .letter-wrapper {
+            width: min(880px, 90%);
+            margin: -55px auto 80px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .letter {
+            background: rgba(255, 253, 248, 0.96);
+            padding: 70px 85px 65px;
+            box-shadow:
+                0 20px 60px rgba(60, 50, 40, 0.08),
+                0 2px 8px rgba(60, 50, 40, 0.04);
+            animation: rise 1s ease;
+        }
+
+        .letter h2 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #403b34;
+            margin-bottom: 42px;
+        }
+
+        .letter p {
+            font-size: 16px;
+            color: #555049;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* 特别记下的片段 */
+        .memory {
+            margin: 38px 0;
+            padding: 28px 30px;
+            border-left: 2px solid #aaa093;
+            background: #f8f5ef;
+        }
+
+        .memory p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #5b554d;
+        }
+
+        /* 结尾 */
+        .ending {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .ending .quote {
+            font-size: 24px;
+            letter-spacing: 4px;
+            color: #403b34;
+            margin-bottom: 28px;
+        }
+
+        .ending .wish {
+            font-size: 15px;
+            color: #777068;
+        }
+
+        .signature {
+            margin-top: 45px;
+            text-align: right;
+            color: #777068;
+            font-size: 14px;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 0 20px 45px;
+            color: #aaa39a;
+            font-family: sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 手机端 */
+        @media (max-width: 600px) {
+            .hero {
+                height: 32vh;
+                min-height: 240px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+                letter-spacing: 3px;
+            }
+
+            .small-title {
+                letter-spacing: 3px;
+            }
+
+            .letter-wrapper {
+                width: 92%;
+                margin-top: -35px;
+                margin-bottom: 50px;
+            }
+
+            .letter {
+                padding: 45px 25px 40px;
+            }
+
+            .letter h2 {
+                font-size: 19px;
+                margin-bottom: 30px;
+            }
+
+            .letter p {
+                font-size: 15px;
+                line-height: 1.9;
+                text-align: left;
+            }
+
+            .memory {
+                padding: 22px 20px;
+                margin: 30px 0;
+            }
+
+            .ending .quote {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 顶部 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="small-title">INTERNSHIP · ZHENGZHOU · 2026</div>
+            <h1>一封感谢信</h1>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- 信件 -->
+    <main class="letter-wrapper">
+        <article class="letter">
+
+            <h2>致赵老师、刘老师、宋老师、王老师</h2>
+
+            <p>
+                从7月来到郑州，到9月结束实习，这段经历已经悄然走到了终点。
+            </p>
+
+            <p>
+                很感谢四位老师在这段时间里给予我的指导、帮助与包容。
+                对我而言，这不仅是一段参与新媒体运营、视频剪辑和文旅宣传工作的经历，
+                更是一次真正走进职场、认识行业的机会。
+            </p>
+
+            <p>
+                从最初对工作环境和内容的陌生，到后来能够独立完成视频剪辑、文案创作、
+                素材整理和账号运营，我在一次次实践中逐渐理解了什么是工作，
+                也开始思考自己未来真正想走的方向。
+            </p>
+
+            <p>
+                这段时间里，我也有过做得不够好的地方，有过反复修改，
+                也有过对自己作品的不满意。
+                但正是在这些具体的经历中，我第一次如此真切地感受到：
+                成长并不是完成多少任务，而是在完成任务之后，
+                比昨天的自己多懂了一点、多会了一点。
+            </p>
+
+            <div class="memory">
+                <p>
+                    也想特别记下几个小小的片段：感谢刘老师在我寻找素材、思考创意时，
+                    总愿意帮我一起找素材、想思路；感谢赵老师、宋老师在日常工作中的指导与帮助；
+                    也感谢王老师在临别时送我的郑州文创礼物，
+                    它会成为我记住这段郑州经历的一份小小纪念。
+                </p>
+            </div>
+
+            <p>
+                实习会结束，但这段经历不会结束。
+            </p>
+
+            <p>
+                未来无论走向哪里，我都会记得自己曾经在这里认真工作过，
+                也会记得这段时间里遇见的老师和朋友。
+            </p>
+
+            <div class="ending">
+                <div class="quote">感谢相遇，感谢教导。</div>
+                <div class="wish">愿四位老师工作顺利，万事顺意。</div>
+            </div>
+
+            <div class="signature">
+                —— 实习生
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        MADE WITH GRATITUDE · ZHENGZHOU · 2026
+    </footer>
+
+</body>
+</html>
+```
+echo "# Thanku" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/luvStone/Thanku.git
+git push -u origin main
